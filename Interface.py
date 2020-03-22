@@ -1,6 +1,7 @@
-import sys
+from sys import argv as arg
 
-print("Primeiro colocque seu arquivo e depois seu nome separando com espaços.")
-
-nome = sys.argv[2]
-print(nome)
+print("-n Nome\n -d Aquivo\n -p profissão\n")
+argumentos = arg[1:]
+print(argumentos)
+profissao = argumentos.index("-p") + 1
+print(argumentos[profissao])
