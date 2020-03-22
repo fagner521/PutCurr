@@ -6,4 +6,3 @@ print(argumentos)
 profissao = argumentos.index("-p") + 1
 print(argumentos[profissao])
 
-chupa rola
