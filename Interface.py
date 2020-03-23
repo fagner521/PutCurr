@@ -1,4 +1,5 @@
 from sys import argv as arg
+from Acessar_google import Pesquisa
 
 # Nome
 # Completo
@@ -21,6 +22,12 @@ from sys import argv as arg
 # não - com
 # filtro
 # filtro = afsafasf
+
+"""""""""
+
+2019..2020 -vagaemprego.com.br -vagas.com -linkedin -folhape -jooble -noticias -noticia -indeed -infojobs -faculdade -matricula -trabalhabrasil -universidade -aprenda (cidade) "profissao" currículo OR curriculum OR contrato OR contratamos OR contato "Trabalhe Conosco"
+
+"""""""""
 
 print("-n Nome Completo\n -c Cidade \n -p profissão\n -t Telefone \n -e Email\n -a Arquivo")
 argumentos = arg[1:]
@@ -71,6 +78,13 @@ index_arquivo = argumentos.index("-a") + 1
 arquivo =  argumentos[index_arquivo]
 print("A arquivo é : "  +  arquivo)
 
+
+termo = '2019..2020 -vagaemprego.com.br -vagas.com -linkedin -folhape -jooble -noticias -noticia -indeed' \
+        ' -infojobs -faculdade -matricula -trabalhabrasil -universidade -aprenda ' + cidade + ' "' + profissão + '"' + \
+        ' currículo OR curriculum OR contrato OR contratamos OR contato "Trabalhe Conosco"'
+print(termo)
+
+Pesquisa.search(termo)
 
 #>>>>>>> Branch-testes
 quit()

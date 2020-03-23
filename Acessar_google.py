@@ -6,7 +6,7 @@ Creio que por ser GET tenha de ser transfomada em URL antes de ser feita a requi
 
 https://www.google.com/search?q=(Termo)&oq=(Termo)
 """""""""
-termos = "choal"
+
 class Pesquisa():
     def teste_internet(self):
         requisicao = rq.get("https://google.com/")
@@ -20,5 +20,3 @@ class Pesquisa():
         requisicao = rq.get('https://www.google.com/search?q=' + self + '&oq=' + self)
         print(requisicao.text)
 
-
-Pesquisa.search("Chola azul")
