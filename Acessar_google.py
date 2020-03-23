@@ -18,5 +18,15 @@ class Pesquisa():
     def search(self):
         self = str(self).replace(" ", "+")
         requisicao = rq.get('https://www.google.com/search?q=' + self + '&oq=' + self)
+        global page
+        page = requisicao.text
         print(requisicao.text)
+        def url_lists(page):
+            lenght = len(str(page))
+            print(lenght)
+            quit()
+            endhtml = str(page).find('</html>')
+
+            start = str(page).find('"/url?q=')
+        url_lists(page)
 
