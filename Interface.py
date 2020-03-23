@@ -67,7 +67,7 @@ arquivo =  argumentos[index_arquivo]
 print("A arquivo é : "  +  arquivo)
 
 
->>>>>>> Branch-testes
+#>>>>>>> Branch-testes
 quit()
 
 
