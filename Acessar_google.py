@@ -16,6 +16,9 @@ class Pesquisa():
             quit()
     teste_internet("teste")
     def search(self):
+        self = str(self).replace(" ", "+")
+        requisicao = rq.get('https://www.google.com/search?q=' + self + '&oq=' + self)
+        print(requisicao.text)
 
 
-Pesquisa
+Pesquisa.search("Chola azul")

@@ -44,10 +44,10 @@ print(nome)
 print("\n")
 
 termos = {}
-termos["-n"] = nome
-print(termos)
 #limpeza do nome logo a baixo
-print(' '.join(nome))
+nome = ' '.join(nome)
+termos["-n"] = nome
+print(termos["-n"])
 
 
 
