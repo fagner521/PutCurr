@@ -1,14 +1,32 @@
-from sys import argv as arg
+ from sys import argv as arg
 
-print("-n Nome\n -d Aquivo\n -p profissão\n")
+# Nome
+# Completo
+# Telefone
+# Email
+# Curriculo
+# Profissão
+# Cidade
+# Todos
+# os
+# empregos
+# da
+# área? sim
+# ou
+# não
+# se
+# sim - sem
+# filto
+# se
+# não - com
+# filtro
+# filtro = afsafasf
+
+print("-n Nome Completo\n -d Cidade \n -p profissão\n -c Telefone \n -q Email\n -b Arquivo")
 argumentos = arg[1:]
 print(argumentos)
-profissao = argumentos.index("-p") + 1
-<<<<<<< HEAD
-print(argumentos[profissao])
+Nome_Completo = argumentos.index("-n") + 1
+print(Nome_Completo)
+Cidade = argumentos.index("-d") + 1
+print(Cidade)
 
-nome = sys.argv[2]
-print(nome)
-=======
-print(argumentos[profissao])
->>>>>>> f888ac8... Sys e menu basico
