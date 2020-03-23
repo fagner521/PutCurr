@@ -41,11 +41,11 @@ for palavra in argumentos[index_nome:]:
 
 print("O nome completo é: ")
 print(nome)
-<<<<<<< HEAD
-termos = {}
-termos["-n"] = nome
-print(termos)
-=======
+#<<<<<<< HEAD
+#termos = {}
+#termos["-n"] = nome
+#print(termos)
+#=======
 index_cidade = argumentos.index("-c") + 1
 cidade =  argumentos[index_cidade]
 print("A cidade é : "  +  cidade)
