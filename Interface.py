@@ -46,29 +46,78 @@ for palavra in argumentos[index_nome:]:
 
         nome.append(str(palavra))
 
-print("O nome completo é: ")
-print(nome)
-print("\n")
+numerador = 0
+
+
 
 termos = {}
 #limpeza do nome logo a baixo
 nome = ' '.join(nome)
 termos["-n"] = nome
-print(termos["-n"])
-
-
+print("O nome completo é : " + termos["-n"])
 
 index_cidade = argumentos.index("-c") + 1
-cidade =  argumentos[index_cidade]
-print("A cidade é : "  +  cidade)
+cidade = []
+for palavra1 in argumentos[index_cidade:]:
+    numerador = numerador + 1
+
+    bolean = "-" in palavra1
+    if bolean == True:
+
+        break
+    else:
+
+        cidade.append(str(palavra1))
+
+numerador = 0
+cidade = ' '.join(cidade)
+termos["-c"] = cidade
+
+
+print("A cidade é : "  +  str(cidade))
+
 
 index_profissão = argumentos.index("-p") + 1
-profissão =  argumentos[index_profissão]
-print("A profissão é : "  +  profissão)
+profissão = []
+for palavra2 in argumentos[index_profissão:]:
+    numerador = numerador + 1
+
+    bolean = "-" in palavra2
+    if bolean == True:
+
+        break
+    else:
+
+        profissão.append(str(palavra2))
+
+numerador = 0
+profissão = ' '.join(profissão)
+termos["-p"] = profissão
+
+
+print("A profissão é : "  +  str(profissão))
+
 
 index_telefone = argumentos.index("-t") + 1
-telefone =  argumentos[index_telefone]
-print("A telefone  é : "  +  telefone)
+telefone = []
+for palavra3 in argumentos[index_telefone:]:
+    numerador = numerador + 1
+
+    bolean = "-" in palavra3
+    if bolean == True:
+
+        break
+    else:
+
+        telefone.append(str(palavra3))
+
+numerador = 0
+telefone = ' '.join(telefone)
+termos["-t"] = telefone
+
+
+print("A telefone é : "  +  str(telefone))
+
 
 index_email = argumentos.index("-e") + 1
 email =  argumentos[index_email]
