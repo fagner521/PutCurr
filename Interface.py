@@ -40,6 +40,9 @@ for palavra in argumentos[index_nome:]:
         nome.append(str(palavra))
 
 print(nome)
+termos = {}
+termos["-n"] = nome
+print(termos)
 quit()
 
 
