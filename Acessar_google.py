@@ -64,4 +64,13 @@ class Pesquisa():
             print(sites)
             sitesarquivo.write(sites)
             #sitesarquivo.close()
+#
+#sitesarquivo = open('sitesarquivo.txt','r')
+#print('\n'.join(sitesarquivo.readlines()))
+
+
+#arquivo1 = open('arquivoindesejado.txt')
+#print('\n'.join(arquivo1.readlines()))
+
+
 
