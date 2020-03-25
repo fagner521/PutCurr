@@ -17,34 +17,45 @@ class Pesquisa():
     teste_internet("teste")
     def search(self):
         self = str(self).replace(" ", "+")
-        requisicao = rq.get('https://www.google.com/search?q=' + self + '&oq=' + self)
-        global page
-        page = requisicao.text
-        #print(requisicao.text)
-        def url_lists(page):
-            start = str(page).find('"/url?q=')
-            global urls
-            urls = []
-            while start != -1:
+        contador = 0
+        global urls
+        urls = []
+        while contador < 50:
+            requisicao = rq.get('https://www.google.com/search?q=' + self + '&start=' + str(contador))
+            global page
+            contador = contador + 10
+            print(contador)
+            page = requisicao.text
+            #print(requisicao.text)
+            def url_lists(page):
                 start = str(page).find('"/url?q=')
-                #print(start)
-                fim = str(page)[start:].find('">')
-                #print(fim)
-                url = str(page)[start + 8:start + fim]
-                urlfim = url.find("&amp;")
-                url = url[:urlfim]
-                page = page[fim:]
-                verificacao = url in urls
-                if verificacao == False:
-                    verific = "google.com" in url
-                    if verific == False:
-                        urls.append(url)
+
+
+                while start != -1:
+                    start = str(page).find('"/url?q=')
+                    #print(start)
+                    fim = str(page)[start:].find('">')
+                    #print(fim)
+                    url = str(page)[start + 8:start + fim]
+                    urlfim = url.find("&amp;")
+                    url = url[:urlfim]
+                    page = page[fim:]
+                    verificacao = url in urls
+                    if verificacao == False:
+                        verific = "google.com" in url
+                        if verific == False:
+                            urls.append(url)
+                        else:
+                            continue
                     else:
                         continue
-                else:
-                    continue
-            length = len(urls)
-            print(' \n'.join(urls[:length-1]))
-            quit()
-        url_lists(page)
+                length = len(urls)
+                global sites
+                sites = ' \n'.join(urls[:length-1])
+                print(sites)
+
+
+
+            url_lists(page)
+            print(sites)
 
