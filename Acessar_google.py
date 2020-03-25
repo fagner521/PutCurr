@@ -61,16 +61,16 @@ class Pesquisa():
 
 
             url_lists(page)
-            print(sites)
-            sitesarquivo.write(sites)
-            #sitesarquivo.close()
-#
-#sitesarquivo = open('sitesarquivo.txt','r')
-#print('\n'.join(sitesarquivo.readlines()))
+        print(sites)
+        sitesarquivo.write(sites)
+        sitesarquivo.close()
+
+        sitesarquivo = open('sitesarquivo.txt','r')
+        print('\n'.join(sitesarquivo.readlines()))
 
 
-#arquivo1 = open('arquivoindesejado.txt')
-#print('\n'.join(arquivo1.readlines()))
+        arquivo1 = open('arquivoindesejado.txt')
+        print(arquivo1.readlines()[1])
 
 
 
