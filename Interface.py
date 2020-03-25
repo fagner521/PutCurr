@@ -171,6 +171,6 @@ while (nome_completo != "-d")
     nome_completo = argumentos[index_nome] + 1 + contador
     print(nome_completo[])
     contador  = contador + 1
-Cidade = argumentos.index("-d") + 1
+Cidade = argumentos.index("-d") + 1Interface.py -n fagner -p  -c recife -t 123123 -e fagner@ -a .cms
 print(Cidade)
 '''''''''
