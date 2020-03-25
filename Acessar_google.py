@@ -19,6 +19,8 @@ class Pesquisa():
         self = str(self).replace(" ", "+")
         contador = 0
         global urls
+        global sitesarquivo
+        sitesarquivo = open('sitesarquivo.txt', 'w')
         urls = []
         while contador < 50:
             requisicao = rq.get('https://www.google.com/search?q=' + self + '&start=' + str(contador))
@@ -52,10 +54,14 @@ class Pesquisa():
                 length = len(urls)
                 global sites
                 sites = ' \n'.join(urls[:length-1])
-                print(sites)
+
+
+
 
 
 
             url_lists(page)
             print(sites)
+            sitesarquivo.write(sites)
+            #sitesarquivo.close()
 
