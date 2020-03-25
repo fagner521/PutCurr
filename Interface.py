@@ -29,10 +29,16 @@ from Acessar_google import Pesquisa
 
 """""""""
 
-print("-n Nome Completo\n -c Cidade \n -p profissão\n -t Telefone \n -e Email\n -a Arquivo")
+
+
 argumentos = arg[1:]
 print(argumentos)
-index_nome = argumentos.index("-n") +1
+try:
+    index_nome = argumentos.index("-n") +1
+except:
+    print(
+        "Essa é uma ferramenta que pesquisa, na internet, oportunidades de trabalho, filtrando sites de vaga de emprego \nque intermedia a comunicação com a empresa. Esta ferramenta visa possibilitar uma comunicação direta com o contratante\n \nPara tal:\n  Insira: -n Nome Completo\n  Insira: -c Cidade\n  Insira: -p Profissão\n  Insira: -t Telefone \n  Insira: -e Email\n  Insira: -a Arquivo")
+    quit()
 nome = []
 numerador = 0
 for palavra in argumentos[index_nome:]:
@@ -56,6 +62,12 @@ nome = ' '.join(nome)
 termos["-n"] = nome
 print("O nome completo é : " + termos["-n"])
 
+try:
+    index_nome = argumentos.index("-c") +1
+except:
+    print("Insira: -n e logo depois 'seu nome', -c e logo depois 'sua cidade'")
+    quit()
+
 index_cidade = argumentos.index("-c") + 1
 cidade = []
 for palavra1 in argumentos[index_cidade:]:
@@ -76,8 +88,12 @@ termos["-c"] = cidade
 
 print("A cidade é : "  +  str(cidade))
 
+try:
+    index_profissão = argumentos.index("-p") +1
+except:
+    print("Insira: -n e logo depois 'seu nome', -c e logo depois 'sua cidade', -p e logo depois 'sua profissão'")
+    quit()
 
-index_profissão = argumentos.index("-p") + 1
 profissão = []
 for palavra2 in argumentos[index_profissão:]:
     numerador = numerador + 1
@@ -97,12 +113,15 @@ termos["-p"] = profissão
 
 print("A profissão é : "  +  str(profissão))
 
+try:
+    index_telefone = argumentos.index("-t") +1
+except:
+    print("Insira: -n e logo depois 'seu nome', -c e logo depois 'sua cidade', -p e logo depois 'sua profissão', e logo depois 'seu telefone'")
+    quit()
 
-index_telefone = argumentos.index("-t") + 1
 telefone = []
 for palavra3 in argumentos[index_telefone:]:
     numerador = numerador + 1
-
     bolean = "-" in palavra3
     if bolean == True:
 
@@ -111,6 +130,8 @@ for palavra3 in argumentos[index_telefone:]:
 
         telefone.append(str(palavra3))
 
+
+
 numerador = 0
 telefone = ' '.join(telefone)
 termos["-t"] = telefone
@@ -118,17 +139,22 @@ termos["-t"] = telefone
 
 print("A telefone é : "  +  str(telefone))
 
+try:
+    index_email = argumentos.index("-e") +1
+except:
+    print("Insira: -n e logo depois 'seu nome', -c e logo depois 'sua cidade', -p e logo depois 'sua profissão', -t e logo depois 'seu telefone', -e e logo depois 'seu email")
+    quit()
 
-index_email = argumentos.index("-e") + 1
+
 email =  argumentos[index_email]
 print("A email é : "  +  email)
 
 index_arquivo = argumentos.index("-a") + 1
 arquivo =  argumentos[index_arquivo]
-print("A arquivo é : "  +  arquivo)
+print("O arquivo é : "  +  arquivo)
 
 
-termo = '-vagaemprego.com.br -gov.br -vagas.com -linkedin -empregos.com.br -glassdoor -empregandobrasil.com.br -simplyhired.com.br -folhape -jooble -jobbydoo -blogspot -apartamento -mercado -imovel -curso -legis -revista -noticias -noticia -indeed' \
+termo = ' -gov.br -linkedin -glassdoor -empregandobrasil.com.br -simplyhired.com.br -folhape -jooble -jobbydoo -blogspot -apartamento -mercado -imovel -curso -legis -revista -noticias -noticia -indeed' \
         ' -infojobs -faculdade -matricula -trabalhabrasil -universidade -aprenda ' + cidade + ' "' + profissão + '"' + \
         ' currículo OR curriculum OR contrato OR contratamos OR contato "Trabalhe Conosco" OR "Trabalhe Conosco" OR vagas OR emprego'
 print(termo)
