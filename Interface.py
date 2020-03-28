@@ -29,7 +29,10 @@ from Acessar_google import Pesquisa
 
 """""""""
 
-
+#arquivoindese = open('arquivoindesejado.txt', 'r')
+#sitesarquivo = open('sitesarquivo.txt','r')
+#print(sitesarquivo.readlines())
+#quit()
 
 argumentos = arg[1:]
 print(argumentos)

@@ -62,15 +62,31 @@ class Pesquisa():
 
             url_lists(page)
         print(sites)
+
+
         sitesarquivo.write(sites)
         sitesarquivo.close()
-
+        arquivoindese = open('arquivoindesejado.txt')
         sitesarquivo = open('sitesarquivo.txt','r')
-        print('\n'.join(sitesarquivo.readlines()))
+        sitesarquivol = [sitesarquivo]
+        print(sitesarquivol)
 
 
-        arquivo1 = open('arquivoindesejado.txt')
-        print(arquivo1.readlines()[1])
-
-
+'''''''''''
+        try:
+            numerador = 0
+            while 1 == 1 :
+                site = sitesarquivo.readlines()[numerador]
+                indesejado = arquivo1.readlines()[numerador]
+                boloeano = indesejado in site
+                print()
+                if boloeano == True:
+                    sitesarquivo = open('sitesarquivo.txt', 'w')
+                    sitesarquivo.writelines()[numerador] = "Limpo---------------------------------------------------\n"
+                    sitesarquivo.close()
+                else:
+                    continue
+        except:
+            print("Ok")
+'''''''''''
 
