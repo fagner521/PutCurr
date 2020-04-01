@@ -46,14 +46,20 @@ class Pesquisa():
                     if verificacao == False:
                         termoindesejado = open("arquivoindesejado.txt", "r").readlines()
                         print("check1")
+                        print(url)
                         for n in termoindesejado:
-                            print(n in url)
-                        verific = termoindesejado in url
-                        if verific == False:
+                            verific = n in url
+                            if verific == False:
+                                b = True
+                            else:
+                                #print("%s Filtrei %s" % (verific, url))
+                                b = False
+                                continue
+                        if b == True:
                             urls.append(url)
                         else:
-                            print("%s Filtrei %s" % (verific, url))
                             continue
+
                     else:
                         continue
                 length = len(urls)
