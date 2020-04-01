@@ -28,12 +28,24 @@ from Acessar_google import Pesquisa
 2019..2020 -vagaemprego.com.br -vagas.com -linkedin -folhape -jooble -noticias -noticia -indeed -infojobs -faculdade -matricula -trabalhabrasil -universidade -aprenda (cidade) "profissao" currículo OR curriculum OR contrato OR contratamos OR contato "Trabalhe Conosco"
 
 """""""""
+"""""""""
+arquivoindese = open('arquivoindesejado.txt', 'r')
+arquivoindese = arquivoindese.readlines()
+sitesarquivo = open('sitesarquivo.txt','r')
+sitesarquivo = sitesarquivo.readlines()
 
-#arquivoindese = open('arquivoindesejado.txt', 'r')
-#sitesarquivo = open('sitesarquivo.txt','r')
-#print(sitesarquivo.readlines())
-#quit()
+for urlarq in sitesarquivo:
+    for termoindese in arquivoindese:
+        condicionador = termoindese in urlarq
+        print(termoindese)
+        if condicionador == True:
+            retirado = sitesarquivo.pop(sitesarquivo.index(urlarq))
+            print("%s \nFiltrei %s" % (termoindese, retirado))
+        else:
+            continue
 
+quit()
+"""""""""
 argumentos = arg[1:]
 print(argumentos)
 try:

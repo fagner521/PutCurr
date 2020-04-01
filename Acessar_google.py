@@ -44,10 +44,15 @@ class Pesquisa():
                     page = page[fim:]
                     verificacao = url in urls
                     if verificacao == False:
-                        verific = "google.com" in url
+                        termoindesejado = open("arquivoindesejado.txt", "r").readlines()
+                        print("check1")
+                        for n in termoindesejado:
+                            print(n in url)
+                        verific = termoindesejado in url
                         if verific == False:
                             urls.append(url)
                         else:
+                            print("%s Filtrei %s" % (verific, url))
                             continue
                     else:
                         continue
