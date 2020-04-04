@@ -169,8 +169,8 @@ arquivo =  argumentos[index_arquivo]
 print("O arquivo é : "  +  arquivo)
 
 
-termo = '-gov.br -vagas.com -catho -neuvoo -empregos.com.br -careerjet -trovit -glassdoor -jooble -jobbydoo -blogs -curso' \
-        ' -revista -noticias -indeed -infojobs  -matricula -trabalhabrasil -universidade' + cidade + ' ' + profissão + \
+termo = '-oferece -concurso -gov.br -vagas.com -neuvoo  -careerjet -trovit -glassdoor -jooble -jobbydoo -blogs -curso' \
+        ' -revista -noticias -indeed -infojobs  -matricula -trabalhabrasil -universidade ' + '"'+ cidade + '"'+ ' ' + profissão + \
         ' "currículo OR curriculum OR contato OR contratamos OR "Trabalhe Conosco""'
 print(termo)
 

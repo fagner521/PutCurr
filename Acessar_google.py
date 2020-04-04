@@ -1,4 +1,9 @@
 import requests as rq
+import time
+
+
+
+
 
 """""""""
 As Pesuisas do google devem ser feitas por GET incluindo a pesquisa nos parametros q=(termo)&oq=(termo).
@@ -22,10 +27,11 @@ class Pesquisa():
         global sitesarquivo
         sitesarquivo = open('sitesarquivo.txt', 'w')
         urls = []
-        while contador < 10:
+        while contador < 100:
             requisicao = rq.get('https://www.google.com/search?q=' + self + '&start=' + str(contador))
             global page
             page = requisicao.text
+            time.sleep(10)
             contador = contador + 10
             print(contador)
             captchatest = "CAPTCHA" in page
@@ -45,6 +51,10 @@ class Pesquisa():
                     urlfim = url.find("&amp;")
                     url = url[:urlfim]
                     url = url.replace("%252B", "supershock").replace("linkedin", "supershock")
+                    vrfsupershock = "supershock" in url
+                    #if vrfsupershock == True:
+                        #url = "meupau"
+                        #continue
                     page = page[fim:]
                     verificacao = url in urls
                     if verificacao == False:
@@ -52,13 +62,16 @@ class Pesquisa():
                         #print("check1")
                         #print(url)
                         for n in termoindesejado:
+                            n = n.replace("\n", '')
                             verific = n in url
+                            #print(n + str(verific) + url)
                             if verific == False:
                                 b = True
                             else:
                                 #print("%s Filtrei %s" % (verific, url))
+                                #print(n)
                                 b = False
-                                continue
+                                break
                         if b == True:
                             urls.append(url)
                         else:
