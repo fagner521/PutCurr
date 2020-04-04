@@ -57,7 +57,7 @@ except:
 nome = []
 numerador = 0
 for palavra in argumentos[index_nome:]:
-    numerador = numerador + 1
+    #numerador = numerador + 1
 
     bolean = "-" in palavra
     if bolean == True:
@@ -175,6 +175,7 @@ termo = '-oferece -concurso -gov.br -vagas.com -neuvoo  -careerjet -trovit -glas
 print(termo)
 
 Pesquisa.search(termo)
+
 
 #>>>>>>> Branch-testes
 quit()
