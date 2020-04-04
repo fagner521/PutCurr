@@ -22,17 +22,19 @@ class Pesquisa():
         global sitesarquivo
         sitesarquivo = open('sitesarquivo.txt', 'w')
         urls = []
-        while contador < 50:
+        while contador < 10:
             requisicao = rq.get('https://www.google.com/search?q=' + self + '&start=' + str(contador))
             global page
+            page = requisicao.text
             contador = contador + 10
             print(contador)
-            page = requisicao.text
+            captchatest = "CAPTCHA" in page
+            if captchatest == True:
+                print("CHAPTCHAAAAAAAA FDP!!!!")
+                quit()
             #print(requisicao.text)
             def url_lists(page):
                 start = str(page).find('"/url?q=')
-
-
                 while start != -1:
                     start = str(page).find('"/url?q=')
                     #print(start)
@@ -52,36 +54,26 @@ class Pesquisa():
                             if verific == False:
                                 b = True
                             else:
-                                #print("%s Filtrei %s" % (verific, url))
+                                print("%s Filtrei %s" % (verific, url))
                                 b = False
                                 continue
                         if b == True:
                             urls.append(url)
                         else:
                             continue
-
                     else:
                         continue
                 length = len(urls)
                 global sites
                 sites = ' \n'.join(urls[:length-1])
-
-
-
-
-
-
             url_lists(page)
         print(sites)
-
-
         sitesarquivo.write(sites)
         sitesarquivo.close()
         arquivoindese = open('arquivoindesejado.txt')
         sitesarquivo = open('sitesarquivo.txt','r')
         sitesarquivol = [sitesarquivo]
         print(sitesarquivol)
-
 
 '''''''''''
         try:
