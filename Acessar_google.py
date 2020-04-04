@@ -35,6 +35,7 @@ class Pesquisa():
             #print(requisicao.text)
             def url_lists(page):
                 start = str(page).find('"/url?q=')
+                termoindesejado = open("arquivoindesejado.txt", "r").readlines()
                 while start != -1:
                     start = str(page).find('"/url?q=')
                     #print(start)
@@ -43,18 +44,19 @@ class Pesquisa():
                     url = str(page)[start + 8:start + fim]
                     urlfim = url.find("&amp;")
                     url = url[:urlfim]
+                    url = url.replace("%252B", "supershock").replace("linkedin", "supershock")
                     page = page[fim:]
                     verificacao = url in urls
                     if verificacao == False:
-                        termoindesejado = open("arquivoindesejado.txt", "r").readlines()
-                        print("check1")
-                        print(url)
+                        #termoindesejado = open("arquivoindesejado.txt", "r").readlines()
+                        #print("check1")
+                        #print(url)
                         for n in termoindesejado:
                             verific = n in url
                             if verific == False:
                                 b = True
                             else:
-                                print("%s Filtrei %s" % (verific, url))
+                                #print("%s Filtrei %s" % (verific, url))
                                 b = False
                                 continue
                         if b == True:
@@ -67,13 +69,12 @@ class Pesquisa():
                 global sites
                 sites = ' \n'.join(urls[:length-1])
             url_lists(page)
-        print(sites)
+        #print(sites)
         sitesarquivo.write(sites)
         sitesarquivo.close()
         arquivoindese = open('arquivoindesejado.txt')
         sitesarquivo = open('sitesarquivo.txt','r')
-        sitesarquivol = [sitesarquivo]
-        print(sitesarquivol)
+        print(sitesarquivo.read())
 
 '''''''''''
         try:
